@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,6 +56,7 @@ public class UCrop {
     public static final String EXTRA_OUTPUT_ANGLE = EXTRA_PREFIX + ".Angle";
     public static final String EXTRA_IMAGE_MATRIX_VALUES = EXTRA_PREFIX + ".ImageMatrixValues";
     public static final String EXTRA_CROP_RECT = EXTRA_PREFIX + ".CropRect";
+    public static final String EXTRA_COVER_TEXT = EXTRA_PREFIX + ".CoverText";
 
 
     private Intent mCropIntent;
