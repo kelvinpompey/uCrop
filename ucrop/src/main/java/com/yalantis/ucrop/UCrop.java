@@ -52,6 +52,10 @@ public class UCrop {
 
     public static final String EXTRA_MAX_SIZE_X = EXTRA_PREFIX + ".MaxSizeX";
     public static final String EXTRA_MAX_SIZE_Y = EXTRA_PREFIX + ".MaxSizeY";
+    public static final String EXTRA_OUTPUT_ANGLE = EXTRA_PREFIX + ".Angle";
+    public static final String EXTRA_IMAGE_MATRIX_VALUES = EXTRA_PREFIX + ".ImageMatrixValues";
+    public static final String EXTRA_CROP_RECT = EXTRA_PREFIX + ".CropRect";
+
 
     private Intent mCropIntent;
     private Bundle mCropOptionsBundle;
@@ -120,6 +124,17 @@ public class UCrop {
         mCropOptionsBundle.putAll(options.getOptionBundle());
         return this;
     }
+
+    public UCrop withSavedState(@NonNull float[] imageMatrixValues, @NonNull RectF cropRect) {
+        mCropOptionsBundle.putFloatArray(EXTRA_IMAGE_MATRIX_VALUES, imageMatrixValues);
+        mCropOptionsBundle.putParcelable(EXTRA_CROP_RECT, cropRect);
+        return this;
+    }
+
+    public UCrop withCoverText(String coverText) {
+        mCropOptionsBundle.putString(EXTRA_COVER_TEXT, coverText);
+        return this;
+    }        
 
     /**
      * Send the crop Intent from an Activity
